@@ -1,0 +1,52 @@
+/*
+Theme Name: BioPu
+Theme URI: https://github.com/lmdu/biopu
+Author: lmdu
+Author URI: https://github.com/lmdu
+Description: a simple wordpress theme for bioinformatics puzzle
+Version: 0.1.0
+License: MIT
+*/
+
+/* header */
+.bp-header .search-box {
+	transition: width .8s;
+	width: 200px;
+}
+
+.bp-header .search-box:focus {
+	width: 350px;
+}
+
+/* main menu */
+.bp-menu{
+	border-top: 2px solid black;
+}
+.bp-menu li.menu-item{
+	margin-top: -2px;
+	z-index: 100;
+}
+
+.bp-menu span.indicator{
+	position: absolute;
+	border: 2px solid black;
+	border-top-color: white;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	left: 0;
+	bottom: 0;
+	top: -2px;
+	z-index: 99;
+	transition: all 0.5s;
+}
+
+/* post */
+.post-title a {
+	color: rgba(41, 41, 41, 1.0);
+	font-weight: 700;
+	text-decoration: none;
+}
+.post-meta {
+	color: #757575;
+	font-size: 0.85rem;
+}
