@@ -29,4 +29,19 @@ for (let i = 0; i < menus.length; i++) {
 	});
 }
 
+//change position of children comments
+let children = document.querySelectorAll('ul.comment-list ul.children');
+children.forEach(function(child) {
+	sibling = child.previousElementSibling;
+	sibling.querySelector('.flex-grow-1').appendChild(child);
+});
+
+//change position of comment form
+/*let form = document.querySelector('.comment-respond');
+replys = document.querySelectorAll('.comment-action .comment-reply-link');
+replys.forEach(function(reply) {
+	reply.closest('.comment-content').appendChild(form);
+});*/
+
+
 });

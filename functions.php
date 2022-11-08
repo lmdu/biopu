@@ -162,3 +162,76 @@ function biopu_category_class($thelist) {
 	return $output;
 }
 add_filter('the_category', 'biopu_category_class');
+
+//sidebar
+function biopu_register_sidebars() {
+	register_sidebar(array(
+		'name' => 'Main Sidebar',
+		'id' => 'main-sidebar',
+		'description' => 'main sidebar',
+		'class' => '',
+		'before_widget' => '<div class="widget-body mb-5">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>'
+	));
+	register_sidebar(array(
+		'name' => 'AD1',
+		'id' => 'ad1-sidebar',
+		'description' => 'AD1 sidebar',
+		'class' => '',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<h3>',
+		'after_title' => '</h3>'
+	));
+}
+add_action('widgets_init', 'biopu_register_sidebars');
+?>
+
+
+<?php
+//comments
+function biopu_comment_list($comment, $args, $depth) {
+	$GLOBALS['comment'] = $comment; 
+	$colors = array('text-bg-light', 'text-bg-dark', 'text-bg-success',
+		'text-bg-primary', 'text-bg-danger', 'text-bg-secondary'
+	);
+	$at = '';
+	if ($depth > 0 && $comment->comment_parent) {
+		$at = get_comment_author($comment->comment_parent);
+		if ($at) {
+			$at = '<a class="badge ' .$colors[$depth]. '" href="#comment-'.$comment->comment_parent. '">@ '.$at.'</a>';
+		} else {
+			$at = '';
+		}
+	}
+?>
+	<li id="comment-<?php comment_ID() ?>">
+		<div class="d-flex">
+			<div class="flex-shrink-0">
+				<div class="comment-avatar">
+					<img src="https://dn-qiniu-avatar.qbox.me/avatar/" class="rounded rounded-circle" width="36" height="36">
+				</div>
+			</div>
+			<div class="flex-grow-1 ms-3">
+				<div class="comment-meta">
+					<ul class="list-inline">
+						<li class="list-inline-item"><?php echo get_comment_author_link(); ?></li>
+						<?php if ($at) : ?>
+						<li class="list-inline-item"><?php echo $at; ?></li>
+						<?php endif; ?>
+						<li class="list-inline-item"><?php echo get_comment_date('M j, Y'); ?></li>
+						<li class="list-inline-item comment-action">
+							<span><?php echo edit_comment_link('', '  ', ''); ?></span>
+							<span class="ms-3"><?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth'], 'reply_text' => ''))); ?></span>
+						</li>
+					</ul>
+				</div>
+				<div class="comment-content mt-3">
+					<?php comment_text(); ?>
+				</div>
+			</div>
+		</div>
+	</li>
+<?php } ?>

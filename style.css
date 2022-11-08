@@ -22,6 +22,11 @@ License: MIT
 .bp-menu{
 	border-top: 2px solid black;
 }
+
+.bp-menu .navbar-nav .nav-link {
+	color: rgba(0, 0, 0, 0.9);
+}
+
 .bp-menu li.menu-item{
 	margin-top: -2px;
 	z-index: 100;
@@ -49,4 +54,85 @@ License: MIT
 .post-meta {
 	color: #757575;
 	font-size: 0.85rem;
+}
+
+/* sidebar */
+.sidebar .widget-title{
+	padding-bottom: 5px;
+	/*border-bottom: 2px solid black;*/
+	font-size: 1.25rem;
+	font-weight: bold;
+}
+.sidebar ul {
+	padding: 0;
+	list-style: none;
+}
+
+.sidebar ul li {
+	margin: 15px 0;
+}
+
+.sidebar ul li a {
+	color: #333;
+	font-size: 0.95rem;
+	text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+	text-decoration: underline;
+}
+
+/* comment */
+ul.comment-list {
+	font-size: 0.9rem;
+	color: #444;
+}
+ul.comment-list ul.children {
+	list-style: none;
+	padding: 0;
+}
+ul.comment-list .comment-meta,
+ul.comment-list .comment-meta a {
+	color: #999;
+	text-decoration: none;
+}
+ul.comment-list .comment-meta a:hover {
+	text-decoration: underline;
+}
+ul.comment-list a.comment-edit-link {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	background-image: url(assets/img/edit.svg);
+	background-position: center center;
+}
+
+ul.comment-list a.comment-reply-link {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	background-image: url(assets/img/reply.svg);
+	background-position: center center;
+}
+
+ul.comment-list .comment-action {
+	display: none;
+}
+
+ul.comment-list .comment-meta:hover .comment-action {
+	display: inline-block;
+}
+.comment-respond .comment-notes {
+	color: #999;
+}
+.comment-respond .comment-reply-title a {
+	color: white;
+	text-decoration: none;
+}
+
+.comment-respond #cancel-comment-reply-link {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	background-image: url(assets/img/cancel.svg);
 }

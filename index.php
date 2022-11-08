@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <div class="container my-5 bp-body">
 	<div class="row">
-		<div class="col-md-9">
+		<div class="col-md-9 pe-md-5">
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<article id="post-<?php the_ID(); ?>" class="mb-5">
 				<h3 class="post-title mb-3">
@@ -12,7 +12,7 @@
 				</div>
 				<div class="post-meta mt-3">
 					<!--<img width="20" height="20" src="<?php echo get_avatar_url(get_the_author_email()); ?>" class="rounded-circle" onerror="this.onerror=null;this.src='https://cdn.v2ex.com/gravatar';">-->
-					<img width="20" height="20" class="rounded-circle" src="https://cdn.v2ex.com/gravatar">
+					<img width="20" height="20" class="rounded-circle" src="https://dn-qiniu-avatar.qbox.me/avatar/">
 					<span class="align-middle"><?php the_author(); ?></span>
 					<span class="ms-3">
 						<img src="<?php bloginfo('template_url'); ?>/assets/img/clock.svg">
@@ -37,7 +37,7 @@
     		</div>
 			<?php endif; ?>
 		</div>
-		<div class="col-md-3"></div>
+		<?php get_sidebar(); ?>
 	</div>
 </div>
 <?php get_footer(); ?>

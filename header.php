@@ -31,9 +31,33 @@
 				'menu_class' => '',
 				'fallback_cb' => '__return_false',
 				'items_wrap' => '<ul id="%1$s" class="position-relative navbar-nav me-auto mb-2 mb-md-0 %2$s">%3$s</ul>',
-				'depth' => 2,
+				'depth' => 0,
 				'walker' => new Bootstrap_Nav_Walker()
 			)); ?>
 		</div>
+		<?php if (is_user_logged_in()): ?>
+		<div class="dropdown text-end" style="z-index: 2000;">
+			<a href="#" class="d-block link-dark text-decoration-none dropdown-toggle show" data-bs-toggle="dropdown" aria-expanded="true">
+				<!--<?php echo get_avatar_url(get_current_user_id(), array('size'=>36));?>-->
+				<img src="https://dn-qiniu-avatar.qbox.me/avatar/" class="rounded-circle" width="36" height="36">
+			</a>
+			<ul class="dropdown-menu text-sm">
+				<li>
+					<h5 class="dropdown-header">
+						<?php $current_user = wp_get_current_user(); echo $current_user->user_login; ?>
+					</h5>
+				</li>
+				<li><a href="<?php echo get_edit_profile_url(); ?>" class="dropdown-item">Edit Profile</a></li>
+				<li><a href="<?php echo admin_url('post-new.php'); ?>" class="dropdown-item">Add New Post</a></li>
+				<li><hr class="dropdown-divider"></li>
+				<li><a href="<?php echo wp_logout_url(); ?>" class="dropdown-item">Log Out</a></li>
+			</ul>
+		</div>
+		<?php else: ?>
+		<div class="text-end">
+			<a href="<?php echo wp_login_url(); ?>" class="btn btn-sm btn-light">Sign in</a>
+			<a href="<?php wp_registration_url(); ?>" class="btn btn-sm btn-danger">Sign up</a>
+		</div>
+		<?php endif; ?>
 	</div>
 </nav>
