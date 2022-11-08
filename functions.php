@@ -176,14 +176,20 @@ function biopu_register_sidebars() {
 		'after_title' => '</h3>'
 	));
 	register_sidebar(array(
-		'name' => 'AD1',
-		'id' => 'ad1-sidebar',
-		'description' => 'AD1 sidebar',
+		'name' => 'Post Header AD',
+		'id' => 'post-header-ad',
+		'description' => 'ad in header of single page',
 		'class' => '',
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>'
+		'before_widget' => '<div class="text-center">',
+		'after_widget' => '</div>',
+	));
+	register_sidebar(array(
+		'name' => 'Post Footer AD',
+		'id' => 'post-footer-ad',
+		'description' => 'ad in footer of single page',
+		'class' => '',
+		'before_widget' => '<div class="text-center">',
+		'after_widget' => '</div>',
 	));
 }
 add_action('widgets_init', 'biopu_register_sidebars');

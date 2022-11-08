@@ -11,6 +11,10 @@ if (cmenu == null) {
 	cmenu = document.querySelector('.bp-menu li.current-menu-parent');
 }
 
+if (cmenu == null) {
+	cmenu = document.querySelector('.bp-menu li.menu-item-home');
+}
+
 function move_menu_indicator(menu) {
 	let left = menu.offsetLeft + 'px';
 	let width = menu.offsetWidth + 'px';

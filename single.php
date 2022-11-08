@@ -25,11 +25,19 @@
 					<span class="align-middle me-5"><?php comments_number($zero="0 Comment"); ?></span>
 					<?php the_category(); ?>
 				</div>
+
+				<?php if (is_active_sidebar('post-header-ad')): ?>
+				<?php dynamic_sidebar('post-header-ad'); ?>
+				<?php endif; ?>
+
 				<div class="post-excerpt lh-lg">
 					<?php the_content(); ?>
 				</div>
 			</article>
 			<?php endwhile; endif; ?>
+			<?php if (is_active_sidebar('post-header-ad')): ?>
+			<?php dynamic_sidebar('post-header-ad'); ?>
+			<?php endif; ?>
 			<?php comments_template(); ?>
 		</div>
 		<?php get_sidebar(); ?>

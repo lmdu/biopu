@@ -4,6 +4,13 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php wp_head(); ?>
+	<title>
+		<?php if (is_front_page()): ?>
+		<?php bloginfo('name'); ?> - <?php bloginfo('description'); ?>
+		<?php else: ?>
+		<?php wp_title(''); ?> - <?php bloginfo('name'); ?>
+		<?php endif; ?>
+	</title>
 </head>
 <body>
 <div class="container bp-header py-4">
@@ -14,7 +21,9 @@
 		</a>
 		<div class="d-flex">
 			<div class="w-100">
-				<input class="form-control border border-dark border-2 rounded-pill search-box" type="search" placeholder="Search" name="search">
+				<form role="search" method="get" action="<?php echo home_url('/'); ?>">
+					<input class="form-control border border-dark border-2 rounded-pill search-box" type="search" placeholder="Search" value="<?php echo get_search_query(); ?>" name="s" id="s">
+				</form>
 			</div>
 		</div>
 	</div>
