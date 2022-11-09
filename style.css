@@ -45,6 +45,11 @@ License: MIT
 	transition: all 0.5s;
 }
 
+/* layout */
+.gx-6 {
+	--bs-gutter-x: 5rem;
+}
+
 /* post */
 .post-title a {
 	color: rgba(41, 41, 41, 1.0);
