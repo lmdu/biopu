@@ -47,5 +47,9 @@ replys.forEach(function(reply) {
 	reply.closest('.comment-content').appendChild(form);
 });*/
 
+//start highlight
+document.querySelectorAll('pre code').forEach(function(el){
+	hljs.highlightElement(el);
+});
 
 });
