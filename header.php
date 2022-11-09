@@ -4,7 +4,6 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" href="<?php bloginfo('template_url'); ?>/assets/img/logo.svg">
-	<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
 	<?php wp_head(); ?>
 	<title>
 		<?php if (is_front_page()): ?>
