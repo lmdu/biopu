@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="<?php bloginfo('template_url'); ?>/assets/img/logo.svg">
 	<?php wp_head(); ?>
 	<title>
 		<?php if (is_front_page()): ?>
@@ -16,7 +17,7 @@
 <div class="container bp-header py-4">
 	<div class="navbar">
 		<a class="navbar-brand" href="#">
-			<img src="<?php bloginfo('template_url'); ?>/assets/img/logo.svg" width="48" height="48" class="d-inline-block align-text-middle">
+			<img src="<?php bloginfo('template_url'); ?>/assets/img/logo.svg" width="60" height="60" class="d-inline-block align-text-middle">
 			<?php echo get_bloginfo('name'); ?>
 		</a>
 		<div class="d-flex">
@@ -65,7 +66,7 @@
 		<?php else: ?>
 		<div class="text-end">
 			<a href="<?php echo wp_login_url(); ?>" class="btn btn-sm btn-light">Sign in</a>
-			<a href="<?php wp_registration_url(); ?>" class="btn btn-sm btn-danger">Sign up</a>
+			<a href="<?php echo wp_registration_url(); ?>" class="btn btn-sm btn-danger">Sign up</a>
 		</div>
 		<?php endif; ?>
 	</div>
