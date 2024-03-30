@@ -17,7 +17,7 @@
 <div class="container bp-header py-4">
 	<div class="navbar">
 		<a class="navbar-brand" href="#">
-			<img src="<?php bloginfo('template_url'); ?>/assets/img/logo.svg" width="60" height="60" class="d-inline-block align-text-middle">
+			<img src="<?php bloginfo('template_url'); ?>/assets/img/logo.svg" width="64" height="64" class="d-inline-block align-text-middle">
 			<?php echo get_bloginfo('name'); ?>
 		</a>
 		<div class="d-flex">

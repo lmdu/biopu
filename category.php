@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <div class="container my-5 bp-body">
 	<div class="row gx-5">
-		<div class="col-md-9 pe-md-5">
+		<div class="col-md-8 pe-md-5">
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<article id="post-<?php the_ID(); ?>" class="mb-5">
 				<h3 class="post-title mb-3">
